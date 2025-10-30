@@ -36,7 +36,7 @@ main.tf            →  VPC
 variables.tf       →  Subnet (public)  
 outputs.tf         →  Internet Gateway  
 user_data.sh       →  Route Table + EC2 (nginx)  
-                   →  Security Group (HTTP 80)
+                    →  Security Group (HTTP 80)
 ```
 
 ---
@@ -87,7 +87,7 @@ user_data.sh       →  Route Table + EC2 (nginx)
 | Free-tier error for t2.micro | Switched to `t3.micro` |
 | Capacity error in a zone | Changed AZ to `us-east-2a` |
 | Page not loading | Waited 30–60s for NGINX install |
-| Want to allow SSH | Use `terraform apply -var="allowed_ssh_cidr=YOUR.IP.ADDR/32"` |
+| Want to allow SSH | Possible via `terraform apply -var="allowed_ssh_cidr=YOUR.IP.ADDR/32"`, but not enabled by default |
 
 ---
 
@@ -119,6 +119,17 @@ terraform destroy -auto-approve
 Screenshot of the deployed website:
 
 ![Hello Marvin Screenshot](./screenshot-hello-marvin.png)
+
+---
+
+## References
+
+- [Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [AWS Free Tier Eligible Instance Types](https://aws.amazon.com/free)
+- [AWS EC2 User Data Documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
+- [Terraform Output Values](https://developer.hashicorp.com/terraform/language/values/outputs)
+- [AWS VPC Overview](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+- [AWS HIPAA Compliance Overview](https://aws.amazon.com/compliance/hipaa-compliance/)
 
 ---
 
