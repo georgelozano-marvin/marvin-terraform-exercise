@@ -1,24 +1,24 @@
 # Marvin Terraform Exercise
 
-A minimal AWS deployment using Terraform that provisions a VPC, subnet, and EC2 instance hosting a simple **“Hello, Marvin!”** web page.
+A minimal AWS deployment using Terraform that provisions a VPC, subnet, and EC2 instance hosting a simple “Hello, Marvin!” web page.
 
 ---
 
-## 🧭 Overview
+## Overview
 
-This project demonstrates how to use **Terraform** to deploy infrastructure on **AWS** following secure, auditable, and automation-friendly practices.
+This project demonstrates how to use Terraform to deploy infrastructure on AWS following secure, auditable, and automation-friendly practices.
 
 It creates:
-- A **VPC** with one **public subnet**
-- An **Internet Gateway** and **route table** for outbound connectivity
-- A **Security Group** that allows only HTTP (port 80)
-- A **t3.micro EC2 instance** (free-tier eligible) running **Amazon Linux 2023**
-- An **NGINX web server** installed automatically via **user_data**
-- **SSH disabled by default** — access via AWS Systems Manager (SSM) if needed
+- A VPC with one public subnet
+- An Internet Gateway and route table for outbound connectivity
+- A Security Group that allows only HTTP (port 80)
+- A t3.micro EC2 instance (free-tier eligible) running Amazon Linux 2023
+- An NGINX web server installed automatically via user_data
+- SSH disabled by default — access via AWS Systems Manager (SSM) if needed
 
 ---
 
-## ⚙️ Infrastructure Diagram (Conceptual)
+## Infrastructure Diagram (Conceptual)
 
 ```
 +---------------------+                 +----------------------+
@@ -35,35 +35,35 @@ It creates:
 
 ---
 
-## 🚀 Deployment Steps
+## Deployment Steps
 
-1. **Configure your AWS CLI**  
+1. Configure your AWS CLI  
    Make sure your IAM user (`terraform-admin`) is set up and authenticated:  
    ```bash
    aws configure
    ```
 
-2. **Initialize Terraform**
+2. Initialize Terraform  
    ```bash
    terraform init
    ```
 
-3. **Preview what Terraform will create**
+3. Preview what Terraform will create  
    ```bash
    terraform plan -out plan.out
    ```
 
-4. **Deploy the infrastructure**
+4. Deploy the infrastructure  
    ```bash
    terraform apply -auto-approve
    ```
 
-5. **Get your public site URL**
+5. Get your public site URL  
    ```bash
    terraform output -raw hello_world_url
    ```
 
-6. **Open the site** in your browser or run:
+6. Open the site in your browser or run:  
    ```bash
    curl $(terraform output -raw hello_world_url)
    ```
@@ -74,7 +74,7 @@ It creates:
 
 ---
 
-## 🧰 Troubleshooting Notes
+## Troubleshooting Notes
 
 | Issue | Fix |
 |-------|-----|
@@ -85,21 +85,21 @@ It creates:
 
 ---
 
-## 🔒 Security & HIPAA Considerations
+## Security and HIPAA Considerations
 
-This deployment intentionally limits public exposure and follows **least-privilege** design.  
+This deployment intentionally limits public exposure and follows least-privilege design.  
 Future enhancements for HIPAA-grade environments would include:
 
 - Private subnets and an Application Load Balancer (ALB)
 - End-to-end TLS with ACM-managed certificates
 - KMS encryption for EBS, S3, and backups
-- CloudTrail + VPC Flow Logs for audit tracking
+- CloudTrail and VPC Flow Logs for audit tracking
 - IAM role separation and MFA enforcement
-- Automated compliance checks (e.g. tfsec, Checkov)
+- Automated compliance checks (for example: tfsec, Checkov)
 
 ---
 
-## 🧹 Teardown
+## Teardown
 
 Destroy resources when finished to avoid charges:
 ```bash
@@ -108,7 +108,7 @@ terraform destroy -auto-approve
 
 ---
 
-## 📸 Proof of Deployment
+## Proof of Deployment
 
 Screenshot of the deployed website:
 
@@ -116,7 +116,7 @@ Screenshot of the deployed website:
 
 ---
 
-## 🧩 Author
+## Author
 
-**George Lozano**  
-IT Systems Engineer | Infrastructure Automation | Security & Identity
+George Lozano  
+IT Systems Engineer | Infrastructure Automation | Security and Identity
