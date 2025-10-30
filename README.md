@@ -21,16 +21,13 @@ It creates:
 ## Infrastructure Diagram (Conceptual)
 
 ```
-+---------------------+                 +----------------------+
-|      Terraform      |   applies to →  |       AWS Cloud      |
-+---------------------+                 +----------------------+
-| - main.tf           |                 | - VPC                |
-| - variables.tf      |                 | - Subnet (public)    |
-| - outputs.tf        |                 | - Internet Gateway   |
-| - user_data.sh      |                 | - Route Table        |
-|                     |                 | - EC2 Instance (nginx|
-|                     |                 | - Security Group (80)|
-+---------------------+                 +----------------------+
+Terraform (your code) ──────────────────────────────► AWS Cloud (what gets created)
+
+main.tf            →  VPC  
+variables.tf       →  Subnet (public)  
+outputs.tf         →  Internet Gateway  
+user_data.sh       →  Route Table + EC2 (nginx)  
+                    →  Security Group (HTTP 80)
 ```
 
 ---
