@@ -1,0 +1,11 @@
+# Terraform local dirs/files
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+plan.out
+
+# OS/editor junk
+.DS_Store
