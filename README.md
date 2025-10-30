@@ -14,7 +14,7 @@ It creates:
 - A Security Group that allows only HTTP (port 80)
 - A t3.micro EC2 instance (free-tier eligible) running Amazon Linux 2023
 - An NGINX web server installed automatically via user_data
-- SSH disabled by default — access via AWS Systems Manager (SSM) if needed
+- SSH disabled by default - access via AWS Systems Manager (SSM) if needed
 
 ---
 
