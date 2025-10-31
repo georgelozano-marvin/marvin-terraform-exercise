@@ -36,7 +36,7 @@ main.tf            →  VPC
 variables.tf       →  Subnet (public)  
 outputs.tf         →  Internet Gateway  
 user_data.sh       →  Route Table + EC2 (nginx)  
-                    →  Security Group (HTTP 80)
+                   →  Security Group (HTTP 80)
 ```
 
 ---
